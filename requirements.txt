@@ -1,0 +1,10 @@
+#Framework para criar a API
+Flask
+
+#Biblioteca de transcrição da OpenAI
+#Instala diretamente do repositório para garantir a versão mais recente
+git+https://github.com/openai/whisper.git
+
+#Instala o PyTorch para CPU. É a opção mais compatível.
+#Se sua VPS tiver uma GPU NVIDIA e você souber configurar, pode alterar esta linha.
+torch --index-url https://download.pytorch.org/whl/cpu

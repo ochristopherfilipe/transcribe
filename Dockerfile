@@ -4,8 +4,8 @@ FROM python:3.10-slim
 # Define o diretório de trabalho dentro do container.
 WORKDIR /app
 
-# Instala o FFmpeg, que é uma dependência essencial do Whisper.
-RUN apt-get update && apt-get install -y ffmpeg
+# Instala as dependências do sistema: FFmpeg (para o Whisper) e Git (para o pip).
+RUN apt-get update && apt-get install -y ffmpeg git
 
 # Copia o arquivo de requisitos para o container.
 COPY requirements.txt .

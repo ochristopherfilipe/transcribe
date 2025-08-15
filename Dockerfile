@@ -10,9 +10,9 @@ RUN apt-get update && apt-get install -y ffmpeg git
 # Copia o arquivo de requisitos para o container.
 COPY requirements.txt .
 
-# Instala as bibliotecas Python.
+# Instala as bibliotecas Python com um tempo limite maior (600 segundos).
 # O --no-cache-dir economiza espaço na imagem final.
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --timeout=600 --no-cache-dir -r requirements.txt
 
 # Copia o resto dos arquivos da sua aplicação (no caso, o app.py).
 COPY . .
